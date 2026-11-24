@@ -17,7 +17,7 @@
 #define FRAME_SKIPPING_DEFAULT_STATE false
 // Turbo mode (toggled with the "5" key): emulate this many Game Boy frames per
 // TARGET_FRAME_DURATION, drawing only the last one.
-#define TURBO_MULTIPLIER 4
+#define TURBO_MULTIPLIER 8
 
 const char eadk_app_name[] __attribute__((section(".rodata.eadk_app_name"))) = "Game Boy";
 const uint32_t eadk_api_level  __attribute__((section(".rodata.eadk_api_level"))) = 0;
