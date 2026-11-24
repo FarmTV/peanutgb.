@@ -17,7 +17,7 @@
 #define FRAME_SKIPPING_DEFAULT_STATE false
 // Turbo mode (toggled with the "5" key): emulate this many Game Boy frames per
 // TARGET_FRAME_DURATION, drawing only the last one.
-#define TURBO_MULTIPLIER 8
+#define TURBO_MULTIPLIER 12
 
 const char eadk_app_name[] __attribute__((section(".rodata.eadk_app_name"))) = "Game Boy";
 const uint32_t eadk_api_level  __attribute__((section(".rodata.eadk_api_level"))) = 0;
@@ -302,10 +302,10 @@ int main(int argc, char * argv[]) {
         wasTurboPressed = true;
         // Make sure the real draw function is restored
         gb.display.lcd_draw_line = drawLineMode;
-        // Small "x4" indicator in the top left corner (outside the game area)
+        // Small "x12" indicator in the top left corner (outside the game area)
         eadk_display_push_rect_uniform((eadk_rect_t){0, 0, 24, 14}, eadk_color_black);
         if (turbo) {
-          eadk_display_draw_string("x4", (eadk_point_t){2, 0}, false, eadk_color_white, eadk_color_black);
+          eadk_display_draw_string("x12", (eadk_point_t){2, 0}, false, eadk_color_white, eadk_color_black);
         }
       }
     } else {
